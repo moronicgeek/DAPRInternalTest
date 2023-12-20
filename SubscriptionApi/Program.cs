@@ -1,11 +1,9 @@
-using System.Text.Json.Serialization;
+
 using Common.Models.Requests;
 // using Common.Models.Requests.Publish;
 using Dapr;
 using Dapr.Client;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
-using SubscriptionApi;
+
 
 // Create a DaprClient instance
 var daprClient = new DaprClientBuilder().Build();
@@ -23,9 +21,8 @@ app.MapPost("/alert", [Topic("pubsub", "alerts")] async (PublishAlertRequest pub
 {
     //receive messages from topic "subscriberapi-topic" usinf dapr client pub sub component
     Console.WriteLine("Subscriber received : " + pubRequest.AlertType + "\nSent at time : " + pubRequest.PublishRequestTime);
-    //return a 200 response to the publisher
 
-    return new JsonResult(new PublishAlertResponse { Status = "Success" }) { StatusCode = 200 };
+    return new PublishAlertRequest { AlertType = pubRequest.AlertType, PublishRequestTime = pubRequest.PublishRequestTime };
 });
 
 
