@@ -15,4 +15,4 @@ Run the Console App
 
 To publish to redis 
 1.  dapr run --app-id alertprocessor --dapr-http-port 3601
-2. dapr publish --publish-app-id orderprocessing --pubsub pubsub --topic alerts --data '{"AlertType":"BlahAlert", "PublishRequestTime" :"2023/01/01"}'
+2.  dapr publish --publish-app-id alertprocessor --pubsub pubsub --topic alerts --data '{"AlertType":"BlahAlert", "PublishRequestTime" :"2023/01/01"}'
