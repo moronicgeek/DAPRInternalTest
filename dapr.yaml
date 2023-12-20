@@ -1,0 +1,10 @@
+version: 1
+apps:
+  - appDirPath: ./AlertApi/
+    appID: alertapi
+    appPort: 5140
+    command: ["dotnet", "run"]
+  - appID: subscriptionapi
+    appPort: 5248
+    appDirPath: ./SubscriptionApi/
+    command: ["dotnet", "run"]

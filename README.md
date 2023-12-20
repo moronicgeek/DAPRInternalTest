@@ -1,15 +1,13 @@
 # InternalTest
 
-For this test you will need to get the following apis and application running and connected via dapr.
+I used DAPR as a locally installed instance in docker which gave me a few services to use such as the pub sub component and state component. 
 
-Please put all dapr yaml files in Config/Components file.
+To run the application you will need to follow these steps : 
 
-Documentation for dapr https://docs.dapr.io/
+Run the backend services
+1. Run dapr init
+2. dapr run -f . (this will start the multi run app)
 
-If you choose to run this in self-hosted mode, you will also need to run a rabbitmq instance in your docker.
-
-If you choose to run on a kubernetes array, we advise you to use minikube for local use.
-
-The overall objective is to get the ConsoleApp to invoke all the endpoints of the AlertApi, one at a time.
-
-You will be able to test all the endpoints on insomnia or postman (once code has been filled in).
+Run the Console App
+1. cd ConsoleApp
+2. dapr run --app-id consoleapp  -- dotnet run
