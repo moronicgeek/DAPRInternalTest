@@ -7,6 +7,9 @@ namespace Services
     {
         public void SendEmail(string from, string to, string subject, string body)
         {
+             // COULD NOT CREATE SENDGRID ACCOUNT 
+                // I implemented a gmail account instead
+                //.... tried at least but due to less secure app settings removed i cant implement this either :D
             try
             {
                 using (var message = new MailMessage(from, to))
