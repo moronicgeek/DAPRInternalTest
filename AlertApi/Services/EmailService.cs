@@ -5,7 +5,7 @@ namespace Services
 {
     public class EmailService
     {
-        public void SendEmail(string from, string to, string subject, string body)
+        public void sendEmail(string from, string to, string subject, string body)
         {
              // COULD NOT CREATE SENDGRID ACCOUNT 
                 // I implemented a gmail account instead

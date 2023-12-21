@@ -2,11 +2,11 @@ using Microsoft.Extensions.Configuration;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 
-public class TwilioService
+public class SMSService
 {
   private readonly IConfiguration config;
 
-  public TwilioService(IConfiguration configuration)
+  public SMSService(IConfiguration configuration)
   {
     config = configuration;
   }

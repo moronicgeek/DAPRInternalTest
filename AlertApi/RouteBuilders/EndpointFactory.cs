@@ -25,7 +25,7 @@ namespace AlertApi.RouteBuilders
                     return new AlertResponse { Response = "Invalid phone number" };
                 }
 
-                var twilio = new TwilioService(app.Configuration);
+                var twilio = new SMSService(app.Configuration);
                 var message = twilio.sendSMS(phoneNumber);
                 Console.WriteLine(message.Body);
 
@@ -52,7 +52,7 @@ namespace AlertApi.RouteBuilders
 
                 //send email here
                 //  var emailService = new EmailService();
-                //  emailService.SendEmail("info@securecitizen.com", emailAddress, "Hello from Secure Citizen!", "Hello from Secure Citizen!");
+                //  emailService.sendEmail("info@securecitizen.com", emailAddress, "Hello from Secure Citizen!", "Hello from Secure Citizen!");
 
 
                 app.Logger.LogInformation("Email sent succesfully");
